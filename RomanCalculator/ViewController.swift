@@ -25,17 +25,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var resultNumber: UITextField!
     @IBOutlet weak var favoriteButton: UIButton!
 
-    //TÜM KURALLAR
-    // Sol -
-    // Sağ +
-    // Soldaki küçükse çıkarılır XIV 10-1+5 XVI 10+5+1
-    // Bir sembol 3'den fazla tekrarlamaz.
-    // V, L ve D sembolleri asla tekrarlanmaz.
-    // Bir sembol üç defadan fazla tekrarlanmaz.
-    // Daha büyük değerli bir sembolün sağına daha küçük bir sembol yazılırsa, değeri daha büyük sembolün değerine eklenir. Örneğin, VI=5+1=6, XI=11 vb.
-    // Daha büyük değerli bir sembolün soluna daha küçük bir sembol yazılırsa, değeri büyük sembolün değerinden çıkarılır. IV= 5-1=4, IX=9 vb.
-    // V, L ve D sembolleri hiçbir zaman daha büyük değere sahip bir sembolün soluna yazılmaz, yani V, L ve D asla çıkarılmaz. I sembolü sadece V ve X'ten çıkarılabilir. X sembolü sadece L, M ve C'den çıkarılabilir.
-    // Bir sembol, daha büyük değere sahip belirli bir sembolden bir kereden fazla çıkarılamaz. Başka bir deyişle, bir sembolün sol tarafında bir sembolü tekrarlayamayız. Örneğin, 98 IIC olarak değil XCVIII olarak yazılmıştır.
+    /*
+               TÜM KURALLAR
+    Sol -
+    Sağ +
+    Soldaki küçükse çıkarılır XIV 10-1+5 XVI 10+5+1
+    Bir sembol 3'den fazla tekrarlamaz.
+    V, L ve D sembolleri asla tekrarlanmaz.
+    Bir sembol üç defadan fazla tekrarlanmaz.
+    Daha büyük değerli bir sembolün sağına daha küçük bir sembol yazılırsa, değeri daha büyük sembolün değerine eklenir. Örneğin, VI=5+1=6, XI=11 vb.
+    Daha büyük değerli bir sembolün soluna daha küçük bir sembol yazılırsa, değeri büyük sembolün değerinden çıkarılır. IV= 5-1=4, IX=9 vb.
+    V, L ve D sembolleri hiçbir zaman daha büyük değere sahip bir sembolün soluna yazılmaz, yani V, L ve D asla çıkarılmaz. I sembolü sadece V ve X'ten çıkarılabilir. X sembolü sadece L, M ve C'den çıkarılabilir.
+    Bir sembol, daha büyük değere sahip belirli bir sembolden bir kereden fazla çıkarılamaz. Başka bir deyişle, bir sembolün sol tarafında bir sembolü tekrarlayamayız. Örneğin, 98 IIC olarak değil XCVIII olarak yazılmıştır.
+    */
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -125,10 +127,10 @@ class ViewController: UIViewController {
         var index = 0
         var allNumbers = [Int]()
         /*
-        Roman rakamlarını iki bloklar halinden soldan başlayarak işleme tabi tutuldu.
+        Roman rakamlarını ikili bloklar halinde soldan başlayarak işleme tabi tutuldu.
         Eğer sağdaki değer soldakinden büyük ise iki değer arasında çıkarma işlemi yapıldı ve bu değerler sırayla allNumbers dizisine eklendi.
-        Tüm karakterler sırayla işleme tabii tutulduktan sonra birbiryle toplanacak karakterler allNumbers dizisi içerisne yerleşmiş oldu.
-        Son olarak bu dizi loop'a alınarak toplandı ve Roman numbers to Integer işlemi gerçekleşti.
+        Tüm karakterler sırayla işleme tabi tutulduktan sonra birbiriyle toplanacak karakterler allNumbers dizisi içerisne yerleştirilmiş oldu.
+        Son olarak bu dizi loop'a alınarak toplandı ve Roman numbers to Integer işlemi gerçekleştirildi.
         */
         while(index < charArray.count) {
             var first = romanNumbers[String(charArray[index])]! // I - 1
